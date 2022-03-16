@@ -9,25 +9,23 @@ This assumes you understand the theory and just want to get coding.
 
 ## Creating a new repo from template
 
-Assuming you have a recent version of rust and cargo (v1.55.0+) installed
+Assuming you have a recent version of rust and cargo (v1.51.0+) installed
 (via [rustup](https://rustup.rs/)),
 then the following should get you a new repo to start a contract:
 
-(Note that recent cargo-generate requires Rust 1.55 features or produces a compile error)
 
 Install [cargo-generate](https://github.com/ashleygwilliams/cargo-generate) and cargo-run-script.
 Unless you did that before, run this line now:
 
 ```sh
-cargo install cargo-generate --features vendored-openssl
-cargo install cargo-run-script
+cargo install cargo-generate cargo-run-script --features vendored-openssl 
 ```
 
 Now, use it to create your new contract.
 Go to the folder in which you want to place it and run:
 
 
-**Latest: 1.0.0-beta**
+**Latest: 0.16**
 
 ```sh
 cargo generate --git https://github.com/CosmWasm/cw-template.git --name PROJECT_NAME
@@ -44,7 +42,7 @@ cargo generate --git https://github.com/CosmWasm/cw-template.git --branch <versi
 Example:
 
 ```sh
-cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.16 --name PROJECT_NAME
+cargo generate --git https://github.com/CosmWasm/cw-template.git --branch 0.14 --name PROJECT_NAME
 ```
 
 You will now have a new folder called `PROJECT_NAME` (I hope you changed that to something else)
@@ -63,7 +61,7 @@ git branch -M main
 git add .
 git commit -m 'Initial Commit'
 git remote add origin YOUR-GIT-URL
-git push -u origin main
+git push -u origin master
 ```
 
 ## CI Support
